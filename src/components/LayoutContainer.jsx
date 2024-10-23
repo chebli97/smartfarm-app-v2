@@ -12,7 +12,8 @@ import {
 } from '@ant-design/icons';
 import { Button, Layout, Menu } from 'antd';
 import Logo from '../assets/Logo smartfarm.png'
-import SmartIrrigationPage from '../views/SmartIrrigationPage';
+// import SmartIrrigationPage from '../views/SmartIrrigationPage';
+import Overview from '../views/Overview';
 
 const { Header, Sider, Content } = Layout;
 
@@ -89,7 +90,7 @@ const LayoutContainer = () => {
           style={{
             // paddingLeft:32 ,
             background: "#F6F6F6",
-            borderBottom:'1px solid #bbb'
+            // borderBottom:'1px solid #eee'
           }}
         >
           <Button
@@ -114,7 +115,9 @@ const LayoutContainer = () => {
             // borderRadius: borderRadiusLG,
           }}
         >
-          <SmartIrrigationPage />
+          {/* <SmartIrrigationPage /> */}
+
+          <Overview />
         </Content>
       </Layout>
     </Layout>

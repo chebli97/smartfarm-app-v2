@@ -158,6 +158,9 @@ const SmartIrrigationPage = () => {
             <Col span={12}>
                 <LineChart />
             </Col>    
+            <Col span={12}>
+                <LineChart />
+            </Col>   
       </Row>          
 
       <Divider    style={{

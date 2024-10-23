@@ -1,4 +1,5 @@
 import { Line } from '@ant-design/plots';
+import { Card} from "antd";
 
 const LineChart = () => {
   const data = [
@@ -29,7 +30,11 @@ const LineChart = () => {
       lineWidth: 2,
     },
   };
-  return <Line {...config} />;
-};
+  return (
+   <Card>
+
+      <Line {...config} />
+  </Card>
+  )};
 
 export default LineChart
