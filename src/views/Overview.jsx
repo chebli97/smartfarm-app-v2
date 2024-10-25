@@ -1,5 +1,6 @@
 import { PlusOutlined } from '@ant-design/icons'
 import {Row , Col , Card, Divider , Space , Button , Flex ,Input , Select} from 'antd'
+import MapComponent from '../components/MapComponent'
 
 
 const { Search } = Input
@@ -18,13 +19,13 @@ const fieldStats = [
 
     const sensorStats = [
         {
-            state : 'Online' , color : '#FD6347' , value : 0
+            state : 'Online' , color : '#3CB371' , value : 0
             },
         {
-        state : 'Low battery' , color : '#3CB371' , value : 0
+        state : 'Low battery' , color : '#1E90FF' , value : 0
         },
             {
-                state : 'Offline' , color : '#1E90FF' , value : 0
+                state : 'Offline' , color : '#FD6347 ' , value : 0
                 },
         ]
 const Overview = () => {
@@ -56,15 +57,15 @@ const Overview = () => {
              
     
         <Row gutter={[16,16]}>
-            <Col span={8}>
+            <Col span={8} xs={24} lg={8} sm={24}>
                 <Card title='Field Stats' style={{padding:26}}>
                         <Flex gap='middle' justify='space-between'> 
                             {
                         fieldStats.map((item,indx) => {
                                 return(
                                 <Flex key={indx} vertical align='center' >
-                                   <span style={{fontSize:40}}>{item.value}</span> 
-                                   <span>{item.state}</span> 
+                                   <span style={{fontSize:40 , color : item.color}}>{item.value}</span> 
+                                   <span style={{ color : item.color , textAlign:'center'}}>{item.state}</span> 
 
                                 </Flex>
                             )
@@ -74,15 +75,15 @@ const Overview = () => {
                         </Flex>
                 </Card>
             </Col>
-            <Col span={8 }>
+            <Col span={8 }  xs={24} lg={8} sm={24}>
                 <Card title='Sensor Stats' style={{padding:26}}>
                 <Flex gap='middle' justify='space-between'> 
                             {
                         sensorStats.map((item,indx) => {
                                 return(
                                 <Flex key={indx} vertical align='center' >
-                                   <span style={{fontSize:40}}>{item.value}</span> 
-                                   <span>{item.state}</span> 
+                                  <span style={{fontSize:40 , color : item.color}}>{item.value}</span> 
+                                  <span style={{ color : item.color , textAlign:'center'}}>{item.state}</span> 
 
                                 </Flex>
                             )
@@ -90,6 +91,11 @@ const Overview = () => {
                         })
                             }
                         </Flex>
+                </Card>
+            </Col>
+            <Col span={8 } xs={24} lg={8} sm={24}>
+                <Card style={{padding:0}} styles={{body : {padding: "0"}}}>
+                            <MapComponent />
                 </Card>
             </Col>
         </Row>
